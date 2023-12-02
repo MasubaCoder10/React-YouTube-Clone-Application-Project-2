@@ -1,24 +1,30 @@
-import logo from './logo.svg';
 import './App.css';
+import {Grid} from '@material-ui/core'
+import Youtube from './api/Youtube';
+import SearchBar from './Component/SearchBar';
+import VideoList from './Component/VideoList';
+import Video from './Component/Video';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+      <Grid justify="center" container spacing={16}>
+        <Grid item xs= {12} >
+          <Grid container spacing={16}>
+            <Grid item xs={12}>
+              {/* Seach bar */}
+              <SearchBar/>
+            </Grid>
+            <Grid item xs={8}>
+              {/* video */}
+              <Video/>
+            </Grid>
+            <Grid item xs={4}>
+              {/* video list*/}
+              <VideoList/>
+            </Grid>
+          </Grid>
+        </Grid>
+      </Grid>
   );
 }
 
